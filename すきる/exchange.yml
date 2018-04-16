@@ -1,0 +1,76 @@
+exchange: 
+  name: 'exchange'
+  type: 'defaulter'
+  max-level: 10
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0.3'
+    incompatible: 
+    - ''
+    cost-scale: '1'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '15'
+    points-spent-req-base: '0'
+    mana-scale: '-1'
+    cooldown-base: '2'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ENDER_CHEST'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Inventory-b: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Cobblestone'
+            check-name: 'False'
+            icon-key: ''
+            amount-scale: '0'
+            check-mat: 'True'
+            amount-base: '16'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Item-c: 
+              type: 'mechanic'
+              data: 
+                amount: '1'
+                material: 'Wood'
+                data: '0'
+                counts: 'True'
+                byte: '0'
+                custom: 'False'
+                icon-key: ''
+              children:  {}
+            Item Remove-d: 
+              type: 'mechanic'
+              data: 
+                regex: 'False'
+                material: 'Cobblestone'
+                counts: 'True'
+                check-name: 'False'
+                icon-key: ''
+                amount-scale: '0'
+                check-mat: 'True'
+                amount-base: '16'
+                check-data: 'False'
+                check-lore: 'False'
+              children:  {}

@@ -1,0 +1,67 @@
+leap:
+  name: 'leap'
+  type: 'defaulter'
+  max-level: 10
+  skill-req: ''
+  skill-req-lvl: 0
+  needs-permission: 'False'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Feather'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 10
+    level-scale: 0
+    cost-base: 1
+    cost-scale: 1
+    cooldown-base: 11
+    cooldown-scale: -0.7
+    mana-base: 10
+    mana-scale: 1
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Cast-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Self-b:
+          type: 'target'
+          data:
+            icon-key: ''
+          children:
+            Launch-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                relative: 'Caster'
+                forward-base: 1
+                forward-scale: 0.1
+                upward-base: 0.8
+                upward-scale: 0.05
+                right-base: 0
+                right-scale: 0
+            Immunity-d:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                type: 'Fall'
+                seconds-base: 2
+                seconds-scale: 0.2
+                multiplier-base: 0
+                multiplier-scale: 0

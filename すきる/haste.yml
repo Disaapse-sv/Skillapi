@@ -1,0 +1,56 @@
+haste:
+  name: 'haste'
+  type: 'defaulter'
+  max-level: 10
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Wood Pickaxe'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 30
+    level-scale: 0
+    cost-base: 1
+    cost-scale: 1
+    cooldown-base: 30
+    cooldown-scale: -1
+    mana-base: 30
+    mana-scale: -1
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Cast-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Self-b:
+          type: 'target'
+          data:
+            icon-key: ''
+          children:
+            Potion-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                potion: 'Fast Digging'
+                ambient: 'True'
+                tier-base: 2
+                tier-scale: 0.4
+                seconds-base: 15
+                seconds-scale: 0

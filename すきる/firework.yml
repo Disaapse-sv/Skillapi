@@ -1,0 +1,62 @@
+firework: 
+  name: 'firework'
+  type: 'defaulter'
+  max-level: 10
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-1'
+    incompatible: 
+    - ''
+    cost-scale: '1'
+    level-scale: '0'
+    level-base: '100'
+    mana-base: '20'
+    points-spent-req-base: '0'
+    mana-scale: '1'
+    cooldown-base: '30'
+    points-spent-req-scale: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FIREWORK'
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '1'
+            range-base: '10'
+            tolerance-scale: '0.2'
+            tolerance-base: '1'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Launch-c: 
+              type: 'mechanic'
+              data: 
+                right-scale: '0'
+                forward-base: '0'
+                right-base: '0'
+                forward-scale: '0'
+                counts: 'True'
+                upward-scale: '0.3'
+                icon-key: ''
+                upward-base: '2'
+                relative: 'Target'
+              children:  {}
